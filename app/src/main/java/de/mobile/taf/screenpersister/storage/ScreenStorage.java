@@ -4,17 +4,21 @@ import java.util.HashMap;
 
 public class ScreenStorage {
 
-    private HashMap<IPersister, ScreenData> storage = null;
+    private HashMap<String, ScreenData> storage = null;
 
     public ScreenStorage() {
-        storage = new HashMap<IPersister, ScreenData>();
+        storage = new HashMap<String, ScreenData>();
     }
 
-    public void put(IPersister id, ScreenData sp) {
+    public void put(String id, ScreenData sp) {
         storage.put(id, sp);
     }
 
-    public ScreenData get(IPersister id) {
+    public ScreenData get(String id) {
         return storage.get(id);
+    }
+
+    public boolean containsKey (String id) {
+        return storage.containsKey(id);
     }
 }

@@ -5,13 +5,27 @@ import java.util.HashMap;
 public class ScreenData {
 
     private HashMap<Integer, String> data = new HashMap<Integer, String>();
+    private IPersister screen;
 
-    public ScreenData() {
+    public ScreenData(IPersister screen) {
+        this.screen = screen;
         data = new HashMap<Integer, String>();
     }
 
-    // GETTER
+    // STORE entry of ID
+    public void putString(Integer id, String value) {
+        data.put(id, value);
+    }
 
+    public void putBool(Integer id, boolean value) {
+        data.put(id, value+"");
+    }
+
+    public void putInt(Integer id, int value) {
+        data.put(id, value+"");
+    }
+
+    // GET data for id
     public String getString(Integer id) {
         String value = data.get(id);
         if (value != null) {
@@ -36,6 +50,5 @@ public class ScreenData {
         }
         return 0;
     }
-
 
 }
