@@ -28,6 +28,8 @@ public class AdressenEingabe extends AppCompatActivity {
 
 
         // Restore the Data from BackgroundStore
+        // erzeuge Persister, verbinde mit Screen und initialisiere
+        // mit gespeicherten Daten
         aep = new AdressenEingabePersister(this);
         aep.restore();
 
