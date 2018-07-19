@@ -4,4 +4,6 @@ public interface IPersister {
 
     public boolean persist();
     public boolean restore();
+    public boolean clear();
+
 }

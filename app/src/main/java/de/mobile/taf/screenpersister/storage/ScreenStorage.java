@@ -14,8 +14,17 @@ public class ScreenStorage {
         storage.put(id, sp);
     }
 
-    public ScreenData get(String id) {
-        return storage.get(id);
+    public ScreenData get(String id, IPersister persister) {
+        ScreenData data = storage.get(id);
+
+        if (data == null) {
+            // create and
+            data = new ScreenData(persister);
+            // store it in BackgroundStorage
+            storage.put(id, data);
+        }
+
+        return data;
     }
 
     public boolean containsKey (String id) {

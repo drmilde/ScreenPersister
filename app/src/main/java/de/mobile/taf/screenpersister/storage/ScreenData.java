@@ -51,4 +51,7 @@ public class ScreenData {
         return 0;
     }
 
+    public void clear() {
+        data.clear();
+    }
 }
